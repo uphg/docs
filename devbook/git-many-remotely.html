@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Git 关联多个远程仓库 | Guru Note</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="stylesheet" href="./font/index.css">
+    <script src="/docs/icon/svg.js"></script>
+    <meta name="description" content="Sea of dawn">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.efa081cd.css" as="style"><link rel="preload" href="/docs/assets/js/app.cdec4db9.js" as="script"><link rel="preload" href="/docs/assets/js/2.993bd611.js" as="script"><link rel="preload" href="/docs/assets/js/25.8f1926f6.js" as="script"><link rel="preload" href="/docs/assets/js/7.5a12abef.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.c3177bdb.js"><link rel="prefetch" href="/docs/assets/js/100.60c23478.js"><link rel="prefetch" href="/docs/assets/js/101.7ea29e1b.js"><link rel="prefetch" href="/docs/assets/js/102.7f47e485.js"><link rel="prefetch" href="/docs/assets/js/103.ea9ce400.js"><link rel="prefetch" href="/docs/assets/js/104.4ec6a518.js"><link rel="prefetch" href="/docs/assets/js/105.75526347.js"><link rel="prefetch" href="/docs/assets/js/106.01f6b03b.js"><link rel="prefetch" href="/docs/assets/js/107.69fe0811.js"><link rel="prefetch" href="/docs/assets/js/108.fa23768b.js"><link rel="prefetch" href="/docs/assets/js/109.90df1698.js"><link rel="prefetch" href="/docs/assets/js/11.54347528.js"><link rel="prefetch" href="/docs/assets/js/110.dd8d7227.js"><link rel="prefetch" href="/docs/assets/js/111.ccf25ceb.js"><link rel="prefetch" href="/docs/assets/js/112.6963298f.js"><link rel="prefetch" href="/docs/assets/js/113.30ceb3d8.js"><link rel="prefetch" href="/docs/assets/js/114.42ef6603.js"><link rel="prefetch" href="/docs/assets/js/115.f1db7817.js"><link rel="prefetch" href="/docs/assets/js/116.92971223.js"><link rel="prefetch" href="/docs/assets/js/117.c5a65e7e.js"><link rel="prefetch" href="/docs/assets/js/118.e329035d.js"><link rel="prefetch" href="/docs/assets/js/119.cbb17c5e.js"><link rel="prefetch" href="/docs/assets/js/12.c8144ee8.js"><link rel="prefetch" href="/docs/assets/js/120.8537f6a6.js"><link rel="prefetch" href="/docs/assets/js/121.257d3851.js"><link rel="prefetch" href="/docs/assets/js/122.96a5f921.js"><link rel="prefetch" href="/docs/assets/js/123.2220fd12.js"><link rel="prefetch" href="/docs/assets/js/124.552b1a29.js"><link rel="prefetch" href="/docs/assets/js/125.4e36fe37.js"><link rel="prefetch" href="/docs/assets/js/126.3939cdcc.js"><link rel="prefetch" href="/docs/assets/js/127.014df434.js"><link rel="prefetch" href="/docs/assets/js/13.edc237a8.js"><link rel="prefetch" href="/docs/assets/js/14.66270d4f.js"><link rel="prefetch" href="/docs/assets/js/15.0804164b.js"><link rel="prefetch" href="/docs/assets/js/16.dec928ab.js"><link rel="prefetch" href="/docs/assets/js/17.bbfc90a8.js"><link rel="prefetch" href="/docs/assets/js/18.76904860.js"><link rel="prefetch" href="/docs/assets/js/19.80a98011.js"><link rel="prefetch" href="/docs/assets/js/20.c39e42bd.js"><link rel="prefetch" href="/docs/assets/js/21.287b744a.js"><link rel="prefetch" href="/docs/assets/js/22.c9506be7.js"><link rel="prefetch" href="/docs/assets/js/23.9732a229.js"><link rel="prefetch" href="/docs/assets/js/24.21ed1f05.js"><link rel="prefetch" href="/docs/assets/js/26.61b6eb9f.js"><link rel="prefetch" href="/docs/assets/js/27.3706753c.js"><link rel="prefetch" href="/docs/assets/js/28.b6b182cf.js"><link rel="prefetch" href="/docs/assets/js/29.ae979ad9.js"><link rel="prefetch" href="/docs/assets/js/3.a7f8dd77.js"><link rel="prefetch" href="/docs/assets/js/30.f2233269.js"><link rel="prefetch" href="/docs/assets/js/31.06780314.js"><link rel="prefetch" href="/docs/assets/js/32.2dad91d1.js"><link rel="prefetch" href="/docs/assets/js/33.87ec6e22.js"><link rel="prefetch" href="/docs/assets/js/34.7b75f220.js"><link rel="prefetch" href="/docs/assets/js/35.3184991f.js"><link rel="prefetch" href="/docs/assets/js/36.28248fbe.js"><link rel="prefetch" href="/docs/assets/js/37.5824a979.js"><link rel="prefetch" href="/docs/assets/js/38.99a364fe.js"><link rel="prefetch" href="/docs/assets/js/39.a5f43732.js"><link rel="prefetch" href="/docs/assets/js/4.a55d89ed.js"><link rel="prefetch" href="/docs/assets/js/40.629f78f7.js"><link rel="prefetch" href="/docs/assets/js/41.e4f58d1c.js"><link rel="prefetch" href="/docs/assets/js/42.9f41aa47.js"><link rel="prefetch" href="/docs/assets/js/43.636412b6.js"><link rel="prefetch" href="/docs/assets/js/44.3b491aef.js"><link rel="prefetch" href="/docs/assets/js/45.77df19bc.js"><link rel="prefetch" href="/docs/assets/js/46.01f53ddd.js"><link rel="prefetch" href="/docs/assets/js/47.476e85c9.js"><link rel="prefetch" href="/docs/assets/js/48.198502dc.js"><link rel="prefetch" href="/docs/assets/js/49.0d59d332.js"><link rel="prefetch" href="/docs/assets/js/5.1597c0f8.js"><link rel="prefetch" href="/docs/assets/js/50.02baf101.js"><link rel="prefetch" href="/docs/assets/js/51.c9fbd54d.js"><link rel="prefetch" href="/docs/assets/js/52.4cb4459b.js"><link rel="prefetch" href="/docs/assets/js/53.248450d7.js"><link rel="prefetch" href="/docs/assets/js/54.83f12d1e.js"><link rel="prefetch" href="/docs/assets/js/55.b18accba.js"><link rel="prefetch" href="/docs/assets/js/56.8a160b09.js"><link rel="prefetch" href="/docs/assets/js/57.b854a940.js"><link rel="prefetch" href="/docs/assets/js/58.4500f315.js"><link rel="prefetch" href="/docs/assets/js/59.59400e36.js"><link rel="prefetch" href="/docs/assets/js/6.887ba020.js"><link rel="prefetch" href="/docs/assets/js/60.4dd5b5bb.js"><link rel="prefetch" href="/docs/assets/js/61.50d8c8f6.js"><link rel="prefetch" href="/docs/assets/js/62.17d10daa.js"><link rel="prefetch" href="/docs/assets/js/63.d5f821cc.js"><link rel="prefetch" href="/docs/assets/js/64.7bf2519f.js"><link rel="prefetch" href="/docs/assets/js/65.0a1c9bc8.js"><link rel="prefetch" href="/docs/assets/js/66.1bcaa81c.js"><link rel="prefetch" href="/docs/assets/js/67.326bdf9b.js"><link rel="prefetch" href="/docs/assets/js/68.2b3b63b2.js"><link rel="prefetch" href="/docs/assets/js/69.c9b1a1a9.js"><link rel="prefetch" href="/docs/assets/js/70.a5fede78.js"><link rel="prefetch" href="/docs/assets/js/71.288d9643.js"><link rel="prefetch" href="/docs/assets/js/72.8665d6b8.js"><link rel="prefetch" href="/docs/assets/js/73.47155429.js"><link rel="prefetch" href="/docs/assets/js/74.4d4738f8.js"><link rel="prefetch" href="/docs/assets/js/75.659a325f.js"><link rel="prefetch" href="/docs/assets/js/76.a263f692.js"><link rel="prefetch" href="/docs/assets/js/77.9d86d59e.js"><link rel="prefetch" href="/docs/assets/js/78.a41b5d88.js"><link rel="prefetch" href="/docs/assets/js/79.5d0fc4cc.js"><link rel="prefetch" href="/docs/assets/js/8.80d0c81d.js"><link rel="prefetch" href="/docs/assets/js/80.01a11f6a.js"><link rel="prefetch" href="/docs/assets/js/81.9c0207d9.js"><link rel="prefetch" href="/docs/assets/js/82.12be8e04.js"><link rel="prefetch" href="/docs/assets/js/83.00fa5f46.js"><link rel="prefetch" href="/docs/assets/js/84.f14cd53c.js"><link rel="prefetch" href="/docs/assets/js/85.e9d7c0d1.js"><link rel="prefetch" href="/docs/assets/js/86.eb78fbbf.js"><link rel="prefetch" href="/docs/assets/js/87.8a31f5ae.js"><link rel="prefetch" href="/docs/assets/js/88.0f10e6dc.js"><link rel="prefetch" href="/docs/assets/js/89.a17253c9.js"><link rel="prefetch" href="/docs/assets/js/9.2fa568cb.js"><link rel="prefetch" href="/docs/assets/js/90.e56bc609.js"><link rel="prefetch" href="/docs/assets/js/91.5277db18.js"><link rel="prefetch" href="/docs/assets/js/92.b0bb8aa7.js"><link rel="prefetch" href="/docs/assets/js/93.cd790b77.js"><link rel="prefetch" href="/docs/assets/js/94.76bbe227.js"><link rel="prefetch" href="/docs/assets/js/95.4f07ca32.js"><link rel="prefetch" href="/docs/assets/js/96.2b1e8485.js"><link rel="prefetch" href="/docs/assets/js/97.e93b3461.js"><link rel="prefetch" href="/docs/assets/js/98.658063a1.js"><link rel="prefetch" href="/docs/assets/js/99.a3642e6d.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.efa081cd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><!----> <span class="site-name">Guru Note</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----> <svg aria-hidden="true" class="icon search-icon"><use xlink:href="#icon-search"></use></svg></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/layout/" class="nav-link">
+  CSS 手册
+</a></div><div class="nav-item"><a href="/docs/js/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端进阶" class="dropdown-title"><span class="title">前端进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端进阶" class="mobile-dropdown-title"><span class="title">前端进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/docs/react/" class="nav-link">
+  React.js
+</a></li></ul></li><li class="dropdown-item"><h4>
+          拓展语言
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/node/" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-subitem"><a href="/docs/ts/" class="nav-link">
+  TypeScript
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/docs/devbook/" class="nav-link router-link-active">
+  开发手册
+</a></div><div class="nav-item"><a href="/docs/exam/" class="nav-link">
+  金九银十
+</a></div><div class="nav-item"><a href="/docs/message/" class="nav-link">
+  留言板
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><div class="el-scrollbar"><div class="scrollbar-wrapper el-scrollbar__wrap el-scrollbar__wrap--hidden-default"><div class="el-scrollbar__view"><nav class="nav-links"><div class="nav-item"><a href="/docs/layout/" class="nav-link">
+  CSS 手册
+</a></div><div class="nav-item"><a href="/docs/js/" class="nav-link">
+  JavaScript
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端进阶" class="dropdown-title"><span class="title">前端进阶</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端进阶" class="mobile-dropdown-title"><span class="title">前端进阶</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/vue/" class="nav-link">
+  Vue.js
+</a></li><li class="dropdown-subitem"><a href="/docs/react/" class="nav-link">
+  React.js
+</a></li></ul></li><li class="dropdown-item"><h4>
+          拓展语言
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/node/" class="nav-link">
+  Node.js
+</a></li><li class="dropdown-subitem"><a href="/docs/ts/" class="nav-link">
+  TypeScript
+</a></li></ul></li></ul></div></div><div class="nav-item"><a href="/docs/devbook/" class="nav-link router-link-active">
+  开发手册
+</a></div><div class="nav-item"><a href="/docs/exam/" class="nav-link">
+  金九银十
+</a></div><div class="nav-item"><a href="/docs/message/" class="nav-link">
+  留言板
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/docs/devbook/" aria-current="page" class="sidebar-link">介绍</a></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>开发者小记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/devbook/note/regex-getting-started.html" class="sidebar-link">正则表达式入门</a></li><li><a href="/docs/devbook/note/lisp-getting-started.html" class="sidebar-link">Lisp 入门</a></li><li><a href="/docs/devbook/note/search-skill.html" class="sidebar-link">搜索引擎常用技巧</a></li><li><a href="/docs/devbook/note/the-http.html" class="sidebar-link">HTTP 相关知识科普</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>环境搭建</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/devbook/setting/node-use.html" class="sidebar-link">Node.js 安装教程</a></li><li><a href="/docs/devbook/setting/cmder-install.html" class="sidebar-link">Cmder 配置教程</a></li><li><a href="/docs/devbook/setting/vscode-and-cmder-use.html" class="sidebar-link">VSCode 与 Cmder 配合使用</a></li><li><a href="/docs/devbook/setting/tool-recommend.html" class="sidebar-link">Windows 常用工具</a></li><li><a href="/docs/devbook/setting/webstorm.html" class="sidebar-link">WebStorm 配置</a></li><li><a href="/docs/devbook/setting/vscode.html" class="sidebar-link">VSCode 配置</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>命令行工具</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/devbook/cli-plugin.html" class="sidebar-link">命令行常用插件</a></li><li><a href="/docs/devbook/cli-hot-key.html" class="sidebar-link">命令行快捷键</a></li><li><a href="/docs/devbook/git-getting-started.html" class="sidebar-link">Git 命令入门</a></li><li><a href="/docs/devbook/git-many-remotely.html" aria-current="page" class="active sidebar-link">Git 关联多个远程仓库</a></li><li><a href="/docs/devbook/mobile-file.html" class="sidebar-link">文件操作命令</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>博客搭建</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/devbook/hexo-build-blog.html" class="sidebar-link">Hexo 搭建博客教程</a></li><li><a href="/docs/devbook/hexo-generate.html" class="sidebar-link">Hexo 生成永久链接</a></li><li><a href="/docs/devbook/hexo-theme.html" class="sidebar-link">Hexo 主题推荐</a></li><li><a href="/docs/devbook/hugo-created-blog.html" class="sidebar-link">Hugo 搭建个人博客</a></li></ul></section></li></ul> </div></div><div class="el-scrollbar__bar is-horizontal"><div class="el-scrollbar__thumb" style="width:0;transform:translateX(0%);ms-transform:translateX(0%);webkit-transform:translateX(0%);"></div></div><div class="el-scrollbar__bar is-vertical"><div class="el-scrollbar__thumb" style="height:0;transform:translateY(0%);ms-transform:translateY(0%);webkit-transform:translateY(0%);"></div></div></div></aside> <main class="page"> <div class="re-page-top"><h1 class="title"><span>Git 关联多个远程仓库</span></h1> <div class="re-page-index"><div class="page-index-title"><span class="open-catalog"><svg aria-hidden="true" class="icon arrow-right"><use xlink:href="#icon-bold-right"></use></svg> <span class="text">目录</span></span></div> <div class="page-index-content"><div class="page-catalog" style="display:none;"><div class="synopsis-wrap"><ul class="synopsis-ul"><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#创建-ssh-key" class="synopsis-link">创建 ssh key</a></li><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#在-gitee-和-github-中添加-ssh-key" class="synopsis-link">在 Gitee 和 GitHub 中添加 SSH key</a></li><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#创建配置文件" class="synopsis-link">创建配置文件</a></li><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#测试连接是否正常" class="synopsis-link">测试连接是否正常</a><ul class="synopsis-ul"><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#测试-github" class="synopsis-link">测试 GitHub</a></li><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#测试-gitee" class="synopsis-link">测试 Gitee</a></li><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#报错问题" class="synopsis-link">报错问题</a></li></ul></li><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#将代码同时提交到两个远程仓库" class="synopsis-link">将代码同时提交到两个远程仓库</a><ul class="synopsis-ul"><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#关联多个远程仓库" class="synopsis-link">关联多个远程仓库</a></li><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#同时推送多个仓库" class="synopsis-link">同时推送多个仓库</a></li></ul></li><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#git-多远程仓库提交脚本" class="synopsis-link">Git 多远程仓库提交脚本</a><ul class="synopsis-ul"><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#首先配置一个简单的全局脚本" class="synopsis-link">首先配置一个简单的全局脚本</a></li><li class="synopsis-li"><a href="/docs/devbook/git-many-remotely.html#使用脚本自动创建多远程仓库提交脚本文件" class="synopsis-link">使用脚本自动创建多远程仓库提交脚本文件</a></li></ul></li></ul></div></div></div></div></div> <div class="theme-default-content content__default"><p>在一台电脑上同时使用Gitee（码云）和Github</p> <p>注：此教程的两个账号邮箱需一至</p> <h2 id="创建-ssh-key"><a href="#创建-ssh-key" class="header-anchor">#</a> 创建 ssh key</h2> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 进入用户目录下的 .ssh 文件夹下，路径会因你使用的操作系统不同而略有差异</span>
+<span class="token comment"># 没有这个文件夹也无所谓，直接运行下一句命令也可以</span>
+<span class="token builtin class-name">cd</span> ~/.ssh
+
+<span class="token comment"># 生成 key，将邮件地址替换为你 Gitee 或者 Github 使用的邮件地址</span>
+ssh-keygen -t rsa -C <span class="token string">&quot;xxx@xxx.com&quot;</span>
+</code></pre></div><p>可能会看到如下提示，连续按三次回车即可</p> <div class="language-csharp extra-class"><pre class="language-csharp"><code>Generating <span class="token keyword">public</span><span class="token operator">/</span><span class="token keyword">private</span> rsa key <span class="token class-name">pair<span class="token punctuation">.</span>
+Enter</span> file <span class="token keyword">in</span> which to save <span class="token return-type class-name">the</span> key <span class="token punctuation">(</span><span class="token operator">/</span>c<span class="token operator">/</span>Users<span class="token operator">/</span>your_user_name<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token return-type class-name">Enter</span> passphrase <span class="token punctuation">(</span>empty <span class="token keyword">for</span> <span class="token class-name">no</span> passphrase<span class="token punctuation">)</span><span class="token punctuation">:</span>
+Enter same <span class="token class-name">passphrase</span> again<span class="token punctuation">:</span>
+</code></pre></div><p>生成完毕后效果如下</p> <div class="language-csharp extra-class"><pre class="language-csharp"><code>Your identification has <span class="token class-name">been</span> saved <span class="token keyword">in</span> id_rsa_gitee<span class="token punctuation">.</span>
+Your <span class="token keyword">public</span> key has <span class="token class-name">been</span> saved <span class="token keyword">in</span> id_rsa_gitee<span class="token punctuation">.</span>pub<span class="token punctuation">.</span>
+The key fingerprint <span class="token keyword">is</span><span class="token punctuation">:</span>
+SHA256<span class="token punctuation">:</span>F0K<span class="token operator">/</span>ojCbFzgMPru11m4g<span class="token operator">/</span>9uV03oHK<span class="token operator">+</span>U0rKBLwOOye2c xxx@xxx<span class="token punctuation">.</span>com
+The key's randomart image <span class="token keyword">is</span><span class="token punctuation">:</span>
+<span class="token operator">+</span><span class="token operator">--</span><span class="token operator">-</span><span class="token punctuation">[</span>RSA <span class="token number">2048</span><span class="token punctuation">]</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">+</span>
+<span class="token operator">|</span>        <span class="token punctuation">.</span>        <span class="token operator">|</span>
+<span class="token operator">|</span>       <span class="token punctuation">.</span> <span class="token punctuation">.</span>       <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token punctuation">.</span>     <span class="token punctuation">.</span> o      <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token operator">+</span> <span class="token punctuation">.</span>   <span class="token punctuation">.</span> o     <span class="token operator">|</span>
+<span class="token operator">|</span>  o X <span class="token punctuation">.</span> S o<span class="token punctuation">.</span>     <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token punctuation">.</span><span class="token operator">+</span><span class="token punctuation">.</span>O o<span class="token punctuation">.</span>o o<span class="token operator">*</span>    <span class="token operator">|</span>
+<span class="token operator">|</span>  oo<span class="token operator">=</span>o<span class="token operator">+</span><span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">+=</span><span class="token punctuation">.</span><span class="token operator">+</span>   <span class="token operator">|</span>
+<span class="token operator">|</span>   <span class="token operator">=</span><span class="token operator">++</span>E<span class="token punctuation">.</span> <span class="token punctuation">.</span>oo<span class="token operator">+</span> <span class="token punctuation">.</span>  <span class="token operator">|</span>
+<span class="token operator">|</span>  <span class="token operator">++</span><span class="token punctuation">.</span><span class="token operator">*=</span>o<span class="token punctuation">.</span> <span class="token punctuation">.</span>o <span class="token punctuation">.</span>   <span class="token operator">|</span>
+<span class="token operator">+</span><span class="token operator">--</span><span class="token operator">--</span><span class="token punctuation">[</span><span class="token attribute"><span class="token class-name">SHA256</span></span><span class="token punctuation">]</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">-</span><span class="token operator">+</span>
+</code></pre></div><h2 id="在-gitee-和-github-中添加-ssh-key"><a href="#在-gitee-和-github-中添加-ssh-key" class="header-anchor">#</a> 在 Gitee 和 GitHub 中添加 SSH key</h2> <p>首先复制用户目录下的 <code>.ssh</code> 文件夹中的 <code>id_rsa.pub</code> 文件的内容</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">cat</span> ~/.ssh/id_rsa.pub
+</code></pre></div><p>会显示类似如下的东西</p> <div class="language-csharp extra-class"><pre class="language-csharp"><code>ssh<span class="token operator">-</span>rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZbvgUEj3XAXH4HkW27ibdXgV6VHdrA9<span class="token operator">/</span>WdSDHtiiC55mjPvxj3OtPxIbpeJmhWyHiJWR6
+uUuK<span class="token operator">+</span>gkb<span class="token comment">//O51uWCPhHqxKR7+45tZ9jHqXW+hEKPp+odQgc+3hiHAjTkn3JGeIJlQp2UdJCDHBrp+kcgVeg91+y7cU3ufaUQ/hpD</span>
+rCgn6uvwjwJgnDhV9DYi<span class="token operator">+</span>gFUFe7LUwa1o4nfwg43ycuOOuT7c6VO2dj<span class="token operator">/</span>0pLRUVTPQYu<span class="token operator">/</span>C3kaaPVedir7mKIu<span class="token operator">/</span>dM6Ec44bhYTp1Dq
+qp8BO42Cfo<span class="token operator">+</span>n<span class="token operator">+</span>dempqYTe2wcPvuDjSj884IATc<span class="token operator">/</span>KvBfc86Yd2Uj7NI7li90Y3i6adoxUIWQh xxx@xxx<span class="token punctuation">.</span>com
+</code></pre></div><p>登录 Gitee 和 Github 在它们的设置中找到 SSH Keys 的设置并添加上面的 key</p> <h2 id="创建配置文件"><a href="#创建配置文件" class="header-anchor">#</a> 创建配置文件</h2> <p>在 .ssh 文件夹中创建 config (没有后缀)文件，添加以下内容以区分两个远程仓库</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token comment"># gitee</span>
+Host gitee.com
+HostName gitee.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+
+<span class="token comment"># github</span>
+Host github.com
+HostName github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+</code></pre></div><p>上述配置文件中使用到的配置字段信息简单概述：</p> <ul><li>Host
+它涵盖了下面一个段的配置，我们可以通过他来替代将要连接的服务器地址。
+这里可以使用任意字段或通配符。
+当ssh的时候如果服务器地址能匹配上这里Host指定的值，则Host下面指定的HostName将被作为最终的服务器地址使用，并且将使用该Host字段下面配置的所有自定义配置来覆盖默认的/etc/ssh/ssh_config配置信息。</li> <li>Port
+自定义的端口。默认为22，可不配置</li> <li>User
+自定义的用户名，默认为git，可不配置</li> <li>HostName
+真正连接的服务器地址</li> <li>PreferredAuthentications
+指定优先使用哪种方式验证，支持密码和秘钥验证方式</li> <li>IdentityFile
+指定本次连接使用的密钥文件</li></ul> <h2 id="测试连接是否正常"><a href="#测试连接是否正常" class="header-anchor">#</a> 测试连接是否正常</h2> <h3 id="测试-github"><a href="#测试-github" class="header-anchor">#</a> 测试 GitHub</h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">ssh</span> -T git@github.com
+</code></pre></div><p>如果显示以下内容，则表示成功</p> <div class="language-csharp extra-class"><pre class="language-csharp"><code>Hi yourname<span class="token operator">!</span> You've <span class="token class-name">successfully</span> authenticated<span class="token punctuation">,</span> but GitHub does <span class="token keyword">not</span> provide shell access<span class="token punctuation">.</span>
+</code></pre></div><h3 id="测试-gitee"><a href="#测试-gitee" class="header-anchor">#</a> 测试 Gitee</h3> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">ssh</span> -T git@gitee.com
+</code></pre></div><p>如果显示以下内容，则表示成功</p> <div class="language-csharp extra-class"><pre class="language-csharp"><code>Welcome to Gitee<span class="token punctuation">.</span>com<span class="token punctuation">,</span> yourname<span class="token operator">!</span>
+</code></pre></div><h3 id="报错问题"><a href="#报错问题" class="header-anchor">#</a> 报错问题</h3> <p>如果出现类似 <code>ssh_dispatch_run_fatal</code> 的报错</p> <p>找到 C 盘的 hosts 文件，添加报错中的路由地址，格式如下：</p> <div class="language- extra-class"><pre class="language-text"><code>xxx.xx.xx.xxx gitee.com
+</code></pre></div><h2 id="将代码同时提交到两个远程仓库"><a href="#将代码同时提交到两个远程仓库" class="header-anchor">#</a> 将代码同时提交到两个远程仓库</h2> <h3 id="关联多个远程仓库"><a href="#关联多个远程仓库" class="header-anchor">#</a> 关联多个远程仓库</h3> <p>先删除已关联的名为 <code>origin</code> 的远程库</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">git</span> remote <span class="token function">rm</span> origin
+</code></pre></div><p>关联 GitHub 的远程库</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">git</span> remote <span class="token function">add</span> github git@github.com:xxx/demo.git
+</code></pre></div><p>再关联 码云 的远程库</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">git</span> remote <span class="token function">add</span> gitee git@gitee.com:xxx/demo.git
+</code></pre></div><p>注意：重新关联的远程库的名称都被改为了 <code>github</code> 和 <code>gitee</code></p> <p>推送到 GitHub，使用命令</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">git</span> push github master
+</code></pre></div><p>推送到 码云，使用命令</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">git</span> push gitee master
+</code></pre></div><p>第一次推送时如果报错，可使用 <code>-f</code> 强制推送（不推荐在公共项目使用）</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">git</span> push -f gitee master
+</code></pre></div><p>如果关联仓库地址错误，可以使用以下命令修改</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">git</span> remote <span class="token function">add</span> xxx git@github.com:aaa.git       <span class="token comment"># 将本地仓库与远程仓库关联</span>
+<span class="token function">git</span> remote set-url xxx git@github.com:bbb.git   <span class="token comment"># 修改关联仓库地址</span>
+</code></pre></div><h3 id="同时推送多个仓库"><a href="#同时推送多个仓库" class="header-anchor">#</a> 同时推送多个仓库</h3> <p>根目录新建<code>push.sh</code>文件，添加以下内容</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token variable">$1</span> <span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">then</span>
+<span class="token assign-left variable">parame</span><span class="token operator">=</span><span class="token string">&quot;update&quot;</span>
+<span class="token keyword">else</span>
+<span class="token assign-left variable">parame</span><span class="token operator">=</span><span class="token variable">$1</span>
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;# 提交代码&quot;</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+<span class="token function">git</span> commit -m <span class="token string">&quot;<span class="token variable">${parame}</span>&quot;</span>
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;# 上传至Github:&quot;</span>
+<span class="token function">git</span> push github master
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;# 上传至码云&quot;</span>
+<span class="token function">git</span> push gitee master
+</code></pre></div><p>添加后运行 <code>sh push.sh</code> 或 <code>sh push.sh &quot;上传xxx项目&quot;</code> 即可快捷推送两个远程仓库</p> <div class="custom-block info"><p class="custom-block-title">提示</p><p>如果要拉取分支更新的信息，也要指定分支名称，如拉取 Github 的更新：</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">git</span> pull github master
+</code></pre></div></div><h2 id="git-多远程仓库提交脚本"><a href="#git-多远程仓库提交脚本" class="header-anchor">#</a> Git 多远程仓库提交脚本</h2> <h3 id="首先配置一个简单的全局脚本"><a href="#首先配置一个简单的全局脚本" class="header-anchor">#</a> 首先配置一个简单的全局脚本</h3> <p>创建一个脚本文件目录 <code>mkdir ~/local</code></p> <p>创建一个配置文件，用于配置命令：<code>touch ~/.bashrc</code></p> <p>编辑配置文件：<code>start ~/.bashrc</code></p> <p>在配置文件中添加以下内容：<code>export PATH=&quot;local的绝对路径:$PATH&quot;</code></p> <p>通过以下命令得到用户路径：<code>cd ~/local; pwd</code></p> <p>将上面的 <code>local的绝对路径</code> 替换为你的用户路径</p> <p>运行 <code>source ~/.bashrc</code> 使配置生效</p> <p>假如之前脚本 <code>demo.txt</code> 写在用户目录下，要运行 <code>sh ~/local/demo.txt</code> 才能执行该脚本。</p> <p>现在你只需要运行 <code>demo.txt</code> 即可。</p> <h3 id="使用脚本自动创建多远程仓库提交脚本文件"><a href="#使用脚本自动创建多远程仓库提交脚本文件" class="header-anchor">#</a> 使用脚本自动创建多远程仓库提交脚本文件</h3> <p>运行 <code>cd ~/local</code></p> <p>创建 <code>remote.sh</code> 文件，添加以下内容（注：需要将其中的 <code>uphg</code> 替换为你的 GitHub 仓库以及码云仓库的文件名）</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token builtin class-name">pwd</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token variable">$2</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token assign-left variable">bale</span><span class="token operator">=</span><span class="token string">&quot;dist&quot;</span>
+<span class="token keyword">else</span>
+<span class="token assign-left variable">bale</span><span class="token operator">=</span><span class="token variable">$2</span>
+<span class="token keyword">fi</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token variable">$1</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token builtin class-name">echo</span> <span class="token string">'error: need to specify directory'</span>
+<span class="token builtin class-name">exit</span>
+<span class="token keyword">else</span>
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;# 第一次关联两个仓库
+echo -e <span class="token entity" title="\&quot;">\&quot;</span><span class="token entity" title="\n">\n</span>== init ==<span class="token entity" title="\&quot;">\&quot;</span>
+git init
+git add .
+git commit -m <span class="token entity" title="\&quot;">\&quot;</span>first commit<span class="token entity" title="\&quot;">\&quot;</span>
+echo -e <span class="token entity" title="\&quot;">\&quot;</span>== init end ==<span class="token entity" title="\n">\n</span><span class="token entity" title="\&quot;">\&quot;</span>
+
+git remote add github git@github.com:uphg/<span class="token variable">$1</span>.git
+git remote add gitee git@gitee.com:uphg/<span class="token variable">$1</span>.git
+
+echo <span class="token entity" title="\&quot;">\&quot;</span>== push Github ==<span class="token entity" title="\&quot;">\&quot;</span>
+git push github master:master
+echo -e <span class="token entity" title="\&quot;">\&quot;</span>== push Github end ==<span class="token entity" title="\n">\n</span><span class="token entity" title="\&quot;">\&quot;</span>
+
+echo <span class="token entity" title="\&quot;">\&quot;</span>== push Gitee ==<span class="token entity" title="\&quot;">\&quot;</span>
+git push gitee master:master
+echo -e <span class="token entity" title="\&quot;">\&quot;</span>== push Gitee end ==<span class="token entity" title="\n">\n</span><span class="token entity" title="\&quot;">\&quot;</span>&quot;</span> <span class="token operator">&gt;&gt;</span> once.sh
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;if [ -z \<span class="token variable">$1</span> ];then
+parame=<span class="token entity" title="\&quot;">\&quot;</span>update<span class="token entity" title="\&quot;">\&quot;</span>
+else
+parame=\<span class="token variable">$1</span>
+fi
+
+echo -e <span class="token entity" title="\&quot;">\&quot;</span><span class="token entity" title="\n">\n</span>== commit code ==<span class="token entity" title="\&quot;">\&quot;</span>
+git add .
+git commit -m <span class="token entity" title="\&quot;">\&quot;</span>\<span class="token variable">${parame}</span><span class="token entity" title="\&quot;">\&quot;</span>
+echo -e <span class="token entity" title="\&quot;">\&quot;</span>== commit end ==<span class="token entity" title="\n">\n</span><span class="token entity" title="\&quot;">\&quot;</span>
+
+echo <span class="token entity" title="\&quot;">\&quot;</span>== push Github ==<span class="token entity" title="\&quot;">\&quot;</span>
+git push github master:master
+echo -e <span class="token entity" title="\&quot;">\&quot;</span>== push Github end ==<span class="token entity" title="\n">\n</span><span class="token entity" title="\&quot;">\&quot;</span>
+
+echo <span class="token entity" title="\&quot;">\&quot;</span>== push Gitee ==<span class="token entity" title="\&quot;">\&quot;</span>
+git push gitee master:master
+echo -e <span class="token entity" title="\&quot;">\&quot;</span>== push Gitee end ==<span class="token entity" title="\n">\n</span><span class="token entity" title="\&quot;">\&quot;</span>&quot;</span> <span class="token operator">&gt;&gt;</span> push.sh
+
+<span class="token builtin class-name">echo</span> <span class="token string">&quot;#!/usr/bin/env sh
+set -e
+yarn build
+cd <span class="token variable">${bale}</span>
+
+echo -e <span class="token entity" title="\&quot;">\&quot;</span><span class="token entity" title="\n">\n</span>== commit build ==<span class="token entity" title="\&quot;">\&quot;</span>
+git init
+git add -A
+git commit -m 'deploy'
+echo -e <span class="token entity" title="\&quot;">\&quot;</span>== commit end ==<span class="token entity" title="\n">\n</span><span class="token entity" title="\&quot;">\&quot;</span>
+
+echo <span class="token entity" title="\&quot;">\&quot;</span>== push Github ==<span class="token entity" title="\&quot;">\&quot;</span>
+git push -f git@github.com:uphg/<span class="token variable">$1</span>.git master:gh-pages
+echo -e <span class="token entity" title="\&quot;">\&quot;</span>== push Github end ==<span class="token entity" title="\n">\n</span><span class="token entity" title="\&quot;">\&quot;</span>
+
+echo <span class="token entity" title="\&quot;">\&quot;</span>== push Gitee ==<span class="token entity" title="\&quot;">\&quot;</span>
+git push -f git@gitee.com:uphg/<span class="token variable">$1</span>.git master:gh-pages
+echo -e <span class="token entity" title="\&quot;">\&quot;</span>== push Gitee end ==<span class="token entity" title="\n">\n</span><span class="token entity" title="\&quot;">\&quot;</span>
+
+echo <span class="token entity" title="\&quot;">\&quot;</span>== Exit the build folder ==<span class="token entity" title="\&quot;">\&quot;</span>
+cd -&quot;</span> <span class="token operator">&gt;&gt;</span> deploy.sh
+<span class="token builtin class-name">exit</span>
+<span class="token keyword">fi</span>
+</code></pre></div><p>命令语法</p> <div class="language-sh extra-class"><pre class="language-sh"><code>remote.sh <span class="token punctuation">[</span>要提交的仓库目录<span class="token punctuation">]</span> <span class="token punctuation">[</span>要部署的文件名<span class="token punctuation">(</span>不填默认dist<span class="token punctuation">)</span><span class="token punctuation">]</span>
+</code></pre></div><p>创建脚本后的功能（只在当前目录下生效）</p> <ul><li>执行 <code>once.sh</code> 即可创建与远程仓库的链接。</li> <li>执行 <code>push.sh &quot;update&quot;</code> 自动向远程仓库提交。</li> <li>执行 <code>deploy.sh</code> 将文件打包，部署至 <code>gh-pages</code> 分支。</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新：</span><span class="time">2021-02-10 12:44</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-left"></use></svg> <a href="/docs/devbook/git-getting-started.html" class="prev">Git 命令入门</a></span> <span class="next"><a href="/docs/devbook/mobile-file.html">文件操作命令</a> <svg aria-hidden="true" class="icon"><use xlink:href="#icon-right"></use></svg></span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/docs/assets/js/app.cdec4db9.js" defer></script><script src="/docs/assets/js/2.993bd611.js" defer></script><script src="/docs/assets/js/25.8f1926f6.js" defer></script><script src="/docs/assets/js/7.5a12abef.js" defer></script>
+  </body>
+</html>
